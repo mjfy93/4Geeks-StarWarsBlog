@@ -1,4 +1,4 @@
-import './styles/root.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
