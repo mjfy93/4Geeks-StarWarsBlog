@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
+
 
 export default function App() {
   return (
@@ -9,7 +9,7 @@ export default function App() {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./styles/root.css" />
+        
         <Meta />
         <Links />
       </head>
@@ -20,7 +20,7 @@ export default function App() {
           <Outlet />
         </main>
 
-        <Footer />
+      
 
         <ScrollRestoration />
         <Scripts />

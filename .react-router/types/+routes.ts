@@ -13,29 +13,24 @@ type Pages = {
   "/": {
     params: {};
   };
-  "/about": {
-    params: {};
-  };
-  "/contact": {
-    params: {};
+  "/:category": {
+    params: {
+      "category": string;
+    };
   };
 };
 
 type RouteFiles = {
   "root.jsx": {
     id: "root";
-    page: "/" | "/about" | "/contact";
+    page: "/" | "/:category";
   };
   "routes/_index.jsx": {
     id: "routes/_index";
     page: "/";
   };
-  "routes/about.jsx": {
-    id: "routes/about";
-    page: "/about";
-  };
-  "routes/contact.jsx": {
-    id: "routes/contact";
-    page: "/contact";
+  "routes/$category.jsx": {
+    id: "routes/$category";
+    page: "/:category";
   };
 };
