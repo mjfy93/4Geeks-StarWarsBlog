@@ -1,4 +1,9 @@
 import { useLoaderData, Link } from "react-router"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJedi } from '@fortawesome/free-solid-svg-icons';
+
+
+
 export async function loader({ request }) {
 
     const url = new URL(request.url)
@@ -12,13 +17,13 @@ export async function loader({ request }) {
 }
 export default function Category() {
     const data = useLoaderData();
-    console.log(data.result);
+    console.log(data.results);
 
 
 
     return (
         <>
-            <Link to="/">home</Link>
+            <Link to="/" style={{fontSize: "50px"}}><FontAwesomeIcon icon={faJedi} /></Link>
             <p>test</p>
 
 

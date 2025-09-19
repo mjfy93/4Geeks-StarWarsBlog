@@ -5,6 +5,7 @@ import Footer from "./components/Footer.jsx";
 import "../public/backgroundHome.jpg"
 
 
+
 export default function App() {
   return (
     <html lang="en">
@@ -18,11 +19,12 @@ export default function App() {
       <body>
 
         <main className="bg-image img-fluid" style={{
-          backgroundImage: `url('../public/backgroundHome.jpg')`,
+          backgroundImage: `url('../public/backgroundHome.jpg?url')`,
           height: "100vh",
           marginTop: "0px",
           backgroundSize: "cover",
-          backgroundRepeat: "no-repeat"
+          backgroundRepeat: "no-repeat",
+          fontFamily: "roboto"
         }}>
         
           <Outlet />
