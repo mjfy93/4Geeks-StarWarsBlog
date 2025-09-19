@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
+import "../public/backgroundHome.jpg"
 
 
 export default function App() {
@@ -14,13 +16,19 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Navbar />
 
-        <main className="container mt-4">
+        <main className="bg-image img-fluid" style={{
+          backgroundImage: `url('../public/backgroundHome.jpg')`,
+          height: "100vh",
+          marginTop: "0px",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat"
+        }}>
+        
           <Outlet />
+        
         </main>
 
-      
 
         <ScrollRestoration />
         <Scripts />

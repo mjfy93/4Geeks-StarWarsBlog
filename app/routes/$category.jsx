@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router"
+import { useLoaderData, Link } from "react-router"
 export async function loader({ request }) {
 
     const url = new URL(request.url)
@@ -12,12 +12,13 @@ export async function loader({ request }) {
 }
 export default function Category() {
     const data = useLoaderData();
-    console.log(data.result[0].properties.title);
+    console.log(data.result);
 
 
 
     return (
         <>
+            <Link to="/">home</Link>
             <p>test</p>
 
 
