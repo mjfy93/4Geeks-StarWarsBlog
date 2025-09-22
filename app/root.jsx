@@ -20,11 +20,13 @@ export default function App() {
 
         <main className="bg-image img-fluid" style={{
           backgroundImage: `url('../public/backgroundHome.jpg?url')`,
+          backgroundAttachment: "fixed",
           height: "100vh",
-          marginTop: "0px",
+          margin: "0px",
+          overflowY: "auto",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          fontFamily: "roboto"
+          fontFamily: "roboto",
         }}>
         
           <Outlet />

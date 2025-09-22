@@ -16,10 +16,9 @@ export async function loader({ request }) {
     return response.json()
 }
 
-export default function Category() {
+export default function Subcategory() {
     const data = useLoaderData();
-    const subcategory = data.results;
-    console.log(subcategory);
+ 
 
 
 
@@ -32,16 +31,7 @@ export default function Category() {
 
         <>
             <Link to="/" className="my-link-style"><FontAwesomeIcon icon={faJedi} /></Link>
-            <div className="card">
-                {subcategory.map(subcategory =>
-                    <div>
-
-                        <Link to={`/${subcategory.name}?url=${encodeURIComponent(subcategory.url)}`}>People
-                        </Link>
-                        <span>{subcategory.uid}</span>
-                    </div>
-                )}
-            </div>
+            <p>test</p>
         </>
     )
 

@@ -18,12 +18,17 @@ type Pages = {
       "category": string;
     };
   };
+  "/:subcategory": {
+    params: {
+      "subcategory": string;
+    };
+  };
 };
 
 type RouteFiles = {
   "root.jsx": {
     id: "root";
-    page: "/" | "/:category";
+    page: "/" | "/:category" | "/:subcategory";
   };
   "routes/_index.jsx": {
     id: "routes/_index";
@@ -32,5 +37,9 @@ type RouteFiles = {
   "routes/$category.jsx": {
     id: "routes/$category";
     page: "/:category";
+  };
+  "routes/$subcategory.jsx": {
+    id: "routes/$subcategory";
+    page: "/:subcategory";
   };
 };
