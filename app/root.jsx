@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-import "../public/backgroundHome.jpg"
+import  backgroundHome from "./assets/backgroundHome.jpg"
 
 
 
@@ -19,7 +19,7 @@ export default function App() {
       <body>
 
         <main className="bg-image img-fluid" style={{
-          backgroundImage: `url('../public/backgroundHome.jpg?url')`,
+          backgroundImage: `url(${backgroundHome})`,
           backgroundAttachment: "fixed",
           height: "100vh",
           margin: "0px",
