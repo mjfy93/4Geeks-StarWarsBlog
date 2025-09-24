@@ -1,0 +1,50 @@
+#containerCategories{
+    padding: 5px;
+    display: flex-wrap;
+    container-type: block-size;
+    
+}
+@container (min-width: 400px) {
+      .child-element {
+        font-size: 1.2em;
+        
+      }
+}
+
+
+#itemsCategories{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+#cardCategories{
+
+    display: block;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 3px;
+    border-radius: 5px;
+    padding: 5px;
+    
+}
+#imageCategories{
+    aspect-ratio: 3/2;
+    width: 300px;
+    border-radius: 10px;
+}
+#buttonCategories{
+    background-color: #ffc107;
+    width: auto;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+#buttonCategories:hover{
+filter: 
+        drop-shadow(0 0 8px rgb(255, 234, 0));
+}
+#linkCategories{
+    color: black;
+    text-decoration: none;
+}

@@ -1,8 +1,15 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
-import  backgroundHome from "./assets/backgroundHome.jpg"
+
+export function links() {
+  return [
+    { rel: "stylesheet", href: "/app/styles/stylesHome.css" },
+    { rel: "stylesheet", href: "/app/styles/stylesCategories.css"}
+  ];
+}
 
 
 
@@ -18,16 +25,8 @@ export default function App() {
       </head>
       <body>
 
-        <main className="bg-image img-fluid" style={{
-          backgroundImage: `url(${backgroundHome})`,
-          backgroundAttachment: "fixed",
-          height: "100vh",
-          margin: "0px",
-          overflowY: "auto",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          fontFamily: "roboto",
-        }}>
+        <main  >
+          <Navbar/>
         
           <Outlet />
         

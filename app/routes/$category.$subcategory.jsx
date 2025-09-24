@@ -1,39 +1,50 @@
-// import { useLoaderData, Link } from "react-router"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faJedi } from '@fortawesome/free-solid-svg-icons';
-// import '../styles/styles.css'
+import { useLoaderData, Link, useParams } from "react-router";
+import { getImageUrl } from "../utils/images";
+
+
+export async function loader({ params }) {
+    const category = params.category
+    const item = params.subcategory
+
+    console.log(item);
+
+
+    const response = await fetch(`https://swapi.tech/api/${category}/${item}`)
+    const data = await response.json()
+
+    return data.result;
+
+
+
+}
+
+export default function Subcategory() {
+    const loaderData = useLoaderData();
+    const params = useParams();
+    const imageUrl = getImageUrl(category, itemId);
 
 
 
 
-// export async function loader({ request }) {
+    return (
 
-//     const url = new URL(request.url)
-//     const apiUrl = url.searchParams.get('url')
-//     const trueUrl = decodeURIComponent(apiUrl)
-//     const response = await fetch(trueUrl)
+        <div id="itemContainer">
+            <div id="itemHeader">
+                <h1>{loaderData.properties.name || loaderData.properties.title}</h1>
+                <Link to={`/${params.category}`} >← Back to {params.category.charAt(0).toUpperCase() + params.category.slice(1)}</Link>
+            </div>
+            <div id="itemContent">
+                
+                    <img src={imageUrl}
+                        // alt={item.name || item.title}
+                        id="imageCategories"
+                    />
+                
+                <p>Test</p>
+                <pre >{JSON.stringify(loaderData, null, 2)}</pre>
 
-//     return response.json()
-// }
+            </div>
+        </div>
 
-// export default function Subcategory() {
-//     const data = useLoaderData();
- 
-
-
-
-
-
-
-
-
-//     return (
-
-//         <>
-//             <Link to="/" className="my-link-style"><FontAwesomeIcon icon={faJedi} /></Link>
-//             <p>test</p>
-//         </>
-//     )
-
-
-// }
+    )
+}

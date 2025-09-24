@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav>
       <ul>
         <li>
-          <Link to='/'><FontAwesomeIcon icon={faJedi} /></Link>
+          <Link to='/' id='homeLink'><FontAwesomeIcon icon={faJedi} id='jediIcon'/></Link>
         </li>       
       </ul>
     </nav>
