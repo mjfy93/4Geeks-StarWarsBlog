@@ -1,7 +1,7 @@
-import { useLoaderData, Link } from "react-router"
+import { useLoaderData, Link, useParams } from "react-router"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJedi } from '@fortawesome/free-solid-svg-icons';
-import { getImageUrl } from '../utils/images'
+import { imageUrls } from '../utils/images'
 
 
 
@@ -14,6 +14,7 @@ export async function loader({ params }) {
 
 export default function Category() {
     const { category, items } = useLoaderData();
+    const params = useParams();
     
 
 
@@ -24,21 +25,22 @@ export default function Category() {
             <div id="itemsCategories">
                     {items.map((item, index) => {
                         const itemId = item.url.split('/')?.pop();
-                        const imageUrl = getImageUrl(category, itemId);
+                        const imageUrl = imageUrls[params.category][item.name];
+                    
+                        
                         return (
                             <div key={index} id="cardCategories">
                                     <img src={imageUrl}
-                                        alt={item.name || item.title}
+                                        alt={item.name}
                                         id="imageCategories"
                                     />
                                     <button id="buttonCategories" >
                                         <Link to={`/${category}/${itemId}`}
                                         id="linkCategories">
-                                            {item.name || item.title}
+                                            {item.name.split(" ").map(e => e.charAt(0).toUpperCase() + e.slice(1) ).join(" ")}
                                         </Link>
                                     </button>
                                 </div>
-
                         );
                     })}
                 </div>

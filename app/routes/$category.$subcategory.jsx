@@ -1,5 +1,5 @@
 import { useLoaderData, Link, useParams } from "react-router";
-import { getImageUrl } from "../utils/images";
+import { imageUrls } from "../utils/images";
 
 
 export async function loader({ params }) {
@@ -12,7 +12,7 @@ export async function loader({ params }) {
     const response = await fetch(`https://swapi.tech/api/${category}/${item}`)
     const data = await response.json()
 
-    return data.result;
+    return data.result.properties;
 
 
 
@@ -21,7 +21,12 @@ export async function loader({ params }) {
 export default function Subcategory() {
     const loaderData = useLoaderData();
     const params = useParams();
-    const imageUrl = getImageUrl(category, itemId);
+    const imageUrl = imageUrls[params.category][loaderData.name];
+    const dataArray = Object.entries(loaderData).filter(
+       ([key]) => ![ "created", "edited", "films"].includes(key)
+    );
+    console.log(dataArray);
+    
 
 
 
@@ -30,21 +35,26 @@ export default function Subcategory() {
 
         <div id="itemContainer">
             <div id="itemHeader">
-                <h1>{loaderData.properties.name || loaderData.properties.title}</h1>
+                <h1>{loaderData.name || loaderData.title}</h1>
                 <Link to={`/${params.category}`} >← Back to {params.category.charAt(0).toUpperCase() + params.category.slice(1)}</Link>
             </div>
-            <div id="itemContent">
-                
+             <div id="itemContent">
                     <img src={imageUrl}
-                        // alt={item.name || item.title}
+                        alt={loaderData.name}
                         id="imageCategories"
                     />
-                
-                <p>Test</p>
-                <pre >{JSON.stringify(loaderData, null, 2)}</pre>
+                    {dataArray.map(([property, info], index)=>(
 
+                        <div key={index}>
+                            <span>{property}</span><span>{info}</span>
+                        </div>
+
+                    ))}
+                
+                
             </div>
         </div>
+      
 
     )
 }

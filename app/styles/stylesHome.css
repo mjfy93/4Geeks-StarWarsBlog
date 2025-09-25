@@ -9,10 +9,10 @@ body{
     background-repeat: no-repeat;
     text-align:center;
     margin:auto;
-    padding:0;
+    padding:0px;
 }
 #containerHome{
-    padding: 5px;
+    padding: 0px 5px;
     display: flex-wrap;
     container-type: block-size;
     
