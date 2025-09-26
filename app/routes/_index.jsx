@@ -36,25 +36,25 @@ export default function Home() {
 
 
   return (
-    <div id="containerHome" >
-      <h1 id="header">STAR WARS Blog - Get to know a Galaxy Far, Far Away</h1>
+    <div className="containerHome" >
+      <h1 className="header">STAR WARS Blog - Get to know a Galaxy Far, Far Away</h1>
       <div >
         <p>STAR WARS fans, famously some of the most dedicated and passionate fans in the world, know that this is a diverse and complex universe. Save your favorites for later! </p>
     
-          <div id="categoriesHome">
+          <div className="categoriesHome">
             {categoriesInfo.map(([category, url], index) => (
      
-                <div  key={index} id="cardHome">
+                <div  key={index} className="cardHome">
                   
-                  <img src={images[index]} id="imageHome" />
+                  <img src={images[index]} className="imageHome" />
                   <div >
-                    <p id="descriptionsHome">{descriptions[index]}</p>
-                    <button id="buttonHome" >
+                    <p className="descriptionsHome">{descriptions[index]}</p>
+                    <button className="buttonHome" >
 
                     <Link
                       key={index}
                       to={`/${category}`} 
-                      id="homeLinkCategories">
+                      className="buttonHome">
                       Discover the {category.charAt(0).toUpperCase() + category.slice(1)}
                     </Link>
                     </button>

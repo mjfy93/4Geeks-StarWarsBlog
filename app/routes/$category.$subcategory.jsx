@@ -35,19 +35,19 @@ export default function Subcategory() {
 
     return (
 
-        <div id="itemContainer">
-            <div id="itemHeader">
+        <div className="itemContainer">
+            <div className="itemHeader">
                 <h1>{loaderData.name}</h1>
                 <Link to={`/${params.category}`} >← Back to {params.category.charAt(0).toUpperCase() + params.category.slice(1)}</Link>
             </div>
-            <div id="itemContent">
+            <div className="itemContent">
                 <img src={imageUrl}
                     alt={loaderData.name}
-                    id="imageCategories"
+                    className="imageCategories"
                 />
                 <div>
 
-                    <table>
+                    <table className="tableInfo">
                         {dataArray.map(([property, info], index) => (
                             <tbody key = { index }>
                                 <tr>

@@ -6,12 +6,10 @@ import { faJedi } from '@fortawesome/free-solid-svg-icons';
 export default function Navbar() {
   return (
     <nav>
-      <ul>
-        <li>
+     
           <Link to='/' id='homeLink'><FontAwesomeIcon icon={faJedi} id='jediIcon'/></Link>
           <span>Favorites</span>
-        </li>       
-      </ul>
+        
     </nav>
   )
 }
