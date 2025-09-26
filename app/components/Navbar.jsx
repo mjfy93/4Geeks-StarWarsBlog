@@ -9,6 +9,7 @@ export default function Navbar() {
       <ul>
         <li>
           <Link to='/' id='homeLink'><FontAwesomeIcon icon={faJedi} id='jediIcon'/></Link>
+          <span>Favorites</span>
         </li>       
       </ul>
     </nav>

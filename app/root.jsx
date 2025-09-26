@@ -7,7 +7,8 @@ import Footer from "./components/Footer.jsx";
 export function links() {
   return [
     { rel: "stylesheet", href: "/app/styles/stylesHome.css" },
-    { rel: "stylesheet", href: "/app/styles/stylesCategories.css"}
+    { rel: "stylesheet", href: "/app/styles/stylesCategories.css" },
+    { rel: "stylesheet", href: "/app/styles/stylesSubcategories.css" }
   ];
 }
 
@@ -25,13 +26,12 @@ export default function App() {
       </head>
       <body>
 
-        <main  >
+        
           <Navbar/>
         
           <Outlet />
         
-        </main>
-
+      
 
         <ScrollRestoration />
         <Scripts />

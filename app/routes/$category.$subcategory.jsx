@@ -17,44 +17,51 @@ export async function loader({ params }) {
 
 
 }
+function isLink(str) {
+    const urlRegex = /^(https?:\/\/|www\.)\S+/i;
+    return urlRegex.test(str);
+
+}
+
+
 
 export default function Subcategory() {
     const loaderData = useLoaderData();
     const params = useParams();
     const imageUrl = imageUrls[params.category][loaderData.name];
     const dataArray = Object.entries(loaderData).filter(
-       ([key]) => ![ "created", "edited", "films"].includes(key)
+        ([key]) => !["created", "edited", "films", "starships", "url", "vehicles", "home_world", "pilots"].includes(key)
     );
-    console.log(dataArray);
-    
-
-
-
 
     return (
 
         <div id="itemContainer">
             <div id="itemHeader">
-                <h1>{loaderData.name || loaderData.title}</h1>
+                <h1>{loaderData.name}</h1>
                 <Link to={`/${params.category}`} >← Back to {params.category.charAt(0).toUpperCase() + params.category.slice(1)}</Link>
             </div>
-             <div id="itemContent">
-                    <img src={imageUrl}
-                        alt={loaderData.name}
-                        id="imageCategories"
-                    />
-                    {dataArray.map(([property, info], index)=>(
+            <div id="itemContent">
+                <img src={imageUrl}
+                    alt={loaderData.name}
+                    id="imageCategories"
+                />
+                <div>
 
-                        <div key={index}>
-                            <span>{property}</span><span>{info}</span>
-                        </div>
+                    <table>
+                        {dataArray.map(([property, info], index) => (
+                            <tbody key = { index }>
+                                <tr>
+                                    <td>{property.charAt(0).toUpperCase() + property.slice(1).split("_").join(" ") + ": "}</td>
+                                    <td>{info.charAt(0).toUpperCase() + info.slice(1)}</td>        
+                                </tr>
+                            </tbody>
+                        ))}
+                    </table>
+                </div>
 
-                    ))}
-                
-                
             </div>
         </div>
-      
+
 
     )
 }
