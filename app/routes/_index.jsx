@@ -1,8 +1,4 @@
 import { Link, useLoaderData } from "react-router";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faJedi } from '@fortawesome/free-solid-svg-icons';
-
-
 
 
 export async function loader() {
@@ -15,18 +11,16 @@ export async function loader() {
 export default function Home() {
   const data = useLoaderData()
  
- 
-  
   const images = [
     "https://i.pinimg.com/736x/10/c6/ad/10c6add44b13d13bcaf326cd5c286818.jpg",
     "https://www.comicbasics.com/wp-content/uploads/2023/07/most-important-star-wars-planets.jpg",
     "https://geekculture.co/wp-content/uploads/2015/11/alongtimeago.jpg"
-  ]
+  ];
   const descriptions= [
     "Meet the amazing characters that have made millions of people, from all walks of life, fall in love with this amazing world.",
     "From frozen worlds, to infinite desserts, explore all your favorite planets and immerse yourself in this vast galaxy.",
     "The iconic Millennium Falcon and the infamous Death Star are only the beginning, there are so many other vehicles to discover."
-  ]
+  ];
 
 
   const categoriesInfo = Object.entries(data.result).filter(([category, url]) =>

@@ -3,6 +3,7 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
+import { FavoritesProvider } from "./store/FavoritesContext";
 
 export function links() {
   return [
@@ -20,18 +21,19 @@ export default function App() {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
+
         <Meta />
         <Links />
       </head>
       <body>
 
-        
-          <Navbar/>
-        
+
+        <FavoritesProvider>
+          <Navbar />
           <Outlet />
-        
-      
+        </FavoritesProvider>
+
+
 
         <ScrollRestoration />
         <Scripts />

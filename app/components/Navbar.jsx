@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJedi } from '@fortawesome/free-solid-svg-icons';
+import Favorites from '../routes/favorites';
 
 
 export default function Navbar() {
@@ -8,7 +9,7 @@ export default function Navbar() {
     <nav>
      
           <Link to='/' id='homeLink'><FontAwesomeIcon icon={faJedi} id='jediIcon'/></Link>
-          <span>Favorites</span>
+          <Link to= "/favorites" id='favoritesLink'>Favorites</Link>
         
     </nav>
   )

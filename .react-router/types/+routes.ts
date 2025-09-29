@@ -13,6 +13,9 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/favorites": {
+    params: {};
+  };
   "/:category": {
     params: {
       "category": string;
@@ -29,11 +32,15 @@ type Pages = {
 type RouteFiles = {
   "root.jsx": {
     id: "root";
-    page: "/" | "/:category" | "/:category/:subcategory";
+    page: "/" | "/favorites" | "/:category" | "/:category/:subcategory";
   };
   "routes/_index.jsx": {
     id: "routes/_index";
     page: "/";
+  };
+  "routes/favorites.jsx": {
+    id: "routes/favorites";
+    page: "/favorites";
   };
   "routes/$category.jsx": {
     id: "routes/$category";
