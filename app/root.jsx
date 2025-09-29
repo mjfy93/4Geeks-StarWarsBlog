@@ -9,6 +9,7 @@ export function links() {
   return [
     { rel: "stylesheet", href: "/app/styles/stylesHome.css" },
     { rel: "stylesheet", href: "/app/styles/stylesCategories.css" },
+    { rel: "stylesheet", href: "/app/styles/stylesFavorites.css" },
     { rel: "stylesheet", href: "/app/styles/stylesSubcategories.css" }
   ];
 }

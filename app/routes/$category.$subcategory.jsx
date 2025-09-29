@@ -58,7 +58,7 @@ export default function Subcategory() {
                     className="buttonToggleFavorite"
                     onClick={handleFavoriteToggle}
                 >
-                    {isItemFavorite ? 'Add to Favorites' : 'Remove From Favorites'}
+                    {isItemFavorite ? '★' : '☆'}
                 </button>
             </h1>
 

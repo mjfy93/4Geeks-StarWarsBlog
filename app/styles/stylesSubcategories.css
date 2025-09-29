@@ -22,7 +22,9 @@
     border-radius: 5px;
     padding: 5px;
     color: black;
-    width: fit-content;
+    width: max-content;
+    font-size: 20px;
+    margin-left: 20px;
 }
 
 .linkBack:hover, .buttonToggleFavorite:hover{
@@ -36,7 +38,10 @@
 
 h1{
     display: flex;
-    justify-content: space-around;
+    justify-content:flex-end;
+    margin: 0px 10px;
+    padding-right: 100px;
+
 }
 
 .itemContainer > table.tableInfo{
@@ -50,6 +55,10 @@ tbody, tr, td{
     padding: 0px 5px;
     font-size: 20px;
     
+}
+td.property:hover{
+    
+    color: #ffc107;
 }
 td.information{
     text-align: start;

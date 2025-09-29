@@ -9,7 +9,7 @@ export default function Navbar() {
     <nav>
      
           <Link to='/' id='homeLink'><FontAwesomeIcon icon={faJedi} id='jediIcon'/></Link>
-          <Link to= "/favorites" id='favoritesLink'>Favorites</Link>
+          <Link to= "/favorites" id='favoritesLink'>Your Favorites</Link>
         
     </nav>
   )

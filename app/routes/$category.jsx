@@ -44,7 +44,9 @@ export default function Category() {
 
                     return (
                         <div className="card">
-                            <button className="cardButton buttonFavorite" onClick={() => handleFavoriteToggle(item, itemId)}>{isItemFavorite ? "★" : "☆"}</button>
+                            <button className="cardButton buttonFavorite" 
+                            onClick={() => handleFavoriteToggle(item, itemId)}>
+                                {isItemFavorite ? "★" : "☆"}</button>
                             <Link key={index} className="cardCategories"
                                 to={`/${category}/${itemId}`}
                                 style={{ backgroundImage: `url(${imageUrl})` }}>

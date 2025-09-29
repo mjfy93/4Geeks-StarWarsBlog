@@ -1,0 +1,38 @@
+.faveContainer{
+display: grid;
+ 
+}
+
+.faveHeader{
+    color: white;
+
+}
+
+.faveCategories{
+    display: flex;
+    justify-content: space-around;
+}
+
+.favorites{
+    display: flex;
+    justify-content: space-between;
+    color: #ffc107;
+    padding: 10px;
+}
+.favorites a{
+    color: white;
+    padding-right: 10px;
+}
+
+.removeFaveButton{
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+}
+.removeFaveButton:hover{
+    filter: 
+        drop-shadow(0 0 8px rgb(255, 234, 0));
+
+}
