@@ -2,15 +2,15 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
 import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
+
 import { FavoritesProvider } from "./store/FavoritesContext";
 
 export function links() {
   return [
-    { rel: "stylesheet", href: "/app/styles/stylesHome.css" },
-    { rel: "stylesheet", href: "/app/styles/stylesCategories.css" },
-    { rel: "stylesheet", href: "/app/styles/stylesFavorites.css" },
-    { rel: "stylesheet", href: "/app/styles/stylesSubcategories.css" }
+    { rel: "stylesheet", href: "/styles/stylesHome.css" },
+    { rel: "stylesheet", href: "/styles/stylesCategories.css" },
+    { rel: "stylesheet", href: "/styles/stylesFavorites.css" },
+    { rel: "stylesheet", href: "/styles/stylesSubcategories.css" }
   ];
 }
 
